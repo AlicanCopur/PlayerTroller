@@ -1,0 +1,13 @@
+name: PlayerTroller
+main: AlicanCopur\PlayerTroller\Loader
+api: [3.9.0]
+version: 1.0.AC
+author: AlicanCopur
+description: "A player troller plugin for PocketMine."
+commands:
+  troll:
+    description: PlayerTroller command.
+    permission: troll.command
+permission:
+  troll.command: 
+    default: op
