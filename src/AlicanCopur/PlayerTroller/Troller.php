@@ -12,7 +12,7 @@
 *
 * @version 1.0
 * @author AlicanCopur
-* @copyright HashCube Network © | 2015 - 2019
+* @copyright HashCube Network © | 2015 - 2020
 * @license Açık yazılım lisansı altındadır. Tüm hakları saklıdır. 
 */                                   
 
@@ -21,7 +21,7 @@ namespace AlicanCopur\PlayerTroller;
 use pocketmine\Player;
 use pocketmine\math\Vector3;
 use pocketmine\entity\Entity;
-use pocketmine\network\mcpe\protocol\AddEntityPacket;
+use pocketmine\network\mcpe\protocol\AddActorPacket;
 
 class Troller {
 	private $listener;
@@ -48,13 +48,10 @@ class Troller {
 		}
 	}
 	public function rocket(Player $p): void{
-          //TO-DO: Bypass anti hacks.
-		for($i = 0; $i < 25; $i++){
-			$p->jump();
-		}
+            $p->setMotion(new Vector3(0, 10, 0));
 	}
 	public function lightning(Player $p): void{
-    	$pk = new AddEntityPacket();
+    	$pk = new AddActorPacket();
    	 $pk->type = 93;
     	$pk->entityRuntimeId = Entity::$entityCount++;
    	 $pk->motion = null;
