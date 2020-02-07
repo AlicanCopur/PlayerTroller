@@ -24,7 +24,7 @@ use pocketmine\event\{
 	player\PlayerChatEvent
 };
 
-class Listener extends PMListener {
+class Listener implements PMListener {
 	public $freeze = [];
 	public $mute = [];
 	
