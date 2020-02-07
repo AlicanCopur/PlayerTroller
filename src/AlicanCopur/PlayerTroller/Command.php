@@ -30,32 +30,32 @@ class Command {
 		if($troll == "freeze"){
 			
 			$this->troller->freeze($tp);
-			$p->sendMessage("§aFreezed §f".$tp->sendMessage());
+			$p->sendMessage("§aFreezed §f".$tp->getName());
 			
 		} elseif($troll == "unfreeze"){
 			
 			$this->troller->unfreeze($tp);
-			$p->sendMessage("§aUnfreezed §f".$tp->sendMessage());
+			$p->sendMessage("§aUnfreezed §f".$tp->getName());
 			
 		} elseif($troll == "mute"){
 			
 			$this->troller->mute($tp);
-			$p->sendMessage("§aMuted §f".$tp->sendMessage());
+			$p->sendMessage("§aMuted §f".$tp->getName());
 			
 		} elseif($troll == "unmute"){
 
 			$this->troller->unmute($tp);
-			$p->sendMessage("§aUnmuted §f".$tp->sendMessage());
+			$p->sendMessage("§aUnmuted §f".$tp->getName());
 
 		} elseif($troll == "rocket"){
 			
 			$this->troller->rocket($tp);
-			$p->sendMessage("§aRocket §f".$tp->sendMessage());
+			$p->sendMessage("§aRocket §f".$tp->getName());
 			
 		} elseif($troll == "lightning"){
 			
 			$this->troller->lightning($tp);
-			$p->sendMessage("§aLightning §f".$tp->sendMessage());
+			$p->sendMessage("§aLightning §f".$tp->getName());
 			
 		} else {
 			$this->help($p);
