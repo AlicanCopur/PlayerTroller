@@ -51,13 +51,13 @@ class Troller {
             $p->setMotion(new Vector3(0, 10, 0));
 	}
 	public function lightning(Player $p): void{
-    	$pk = new AddActorPacket();
-   	 $pk->type = 93;
-    	$pk->entityRuntimeId = Entity::$entityCount++;
-   	 $pk->motion = null;
-    	$pk->position = new Vector3($p->getX(), $p->getY(), $p->getZ());
-    	foreach($p->getLevel()->getPlayers() as $pl){
-     	 $pl->dataPacket($pk);
-   	 }
-    }
+    	    $pk = new AddActorPacket();
+   	    $pk->type = 93;
+    	    $pk->entityRuntimeId = Entity::$entityCount++;
+   	    $pk->motion = null;
+    	    $pk->position = $p->asVector3();
+    	    foreach($p->getLevel()->getPlayers() as $pl){
+     	        $pl->dataPacket($pk);
+   	    }
+      }
 }
